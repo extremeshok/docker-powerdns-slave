@@ -1,0 +1,21 @@
+services:
+###### xshok-powerdns-slave
+  xshok-powerdns-slave:
+    image: extremeshok/xshok-powerdns-slave:latest
+    environment:
+      - TZ=${TZ:-UTC}
+      - HOSTNAME=ns1.mydomain.com
+      - PDNS_SUPERMASTERS=11.11.11.11:hiddenmaster.mydomain.com
+    volumes:
+      - vol-powerdns-slave:/data/
+    ports:
+      - 53:53/udp
+      - 53:53/tcp
+#      - 8083:8083
+    restart: always
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=${SYSCTL_IPV6_DISABLED:-0}
+    networks:
+      network:
+        aliases:
+          - powerdns

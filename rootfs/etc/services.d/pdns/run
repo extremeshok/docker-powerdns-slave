@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv sh
+
+# Run pdns server
+/bin/bash /xshok_gen_conf.sh
