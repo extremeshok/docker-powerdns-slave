@@ -1,4 +1,7 @@
 # docker-powerdns-slave
+
+https://hub.docker.com/r/extremeshok/powerdns-slave
+
 powerdns slave server
 
 Designed to run a slave server which will connect to a hidden master/supermaster.
